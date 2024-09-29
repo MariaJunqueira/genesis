@@ -1,0 +1,29 @@
+<header>
+  <nav>
+    <ul>
+      <li> {{'header::nav::home' | translate}}</li>
+      <li> {{'header::nav::about' | translate}}</li>
+      <li> {{ 'header::nav::portfolio' | translate}}</li>
+      <li>
+        <select #langSelect (change)="onLangChange(langSelect.value)">
+          <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">
+            {{ lang }}
+          </option>
+        </select>
+      </li>
+    </ul>
+  </nav>
+
+</header>
+<main>
+  <router-outlet></router-outlet>
+</main>
+<footer>
+  <div class="grid-container">
+    <div class="row">
+      <div class="col-xs-12">Footer
+      </div>
+    </div>
+  </div>
+</footer>
+<app-grid-debug></app-grid-debug>

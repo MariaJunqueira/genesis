@@ -1,0 +1,32 @@
+@import "variables";
+
+.grid-debug {
+  width: $size-pe-100;
+  height: $size-pe-100;
+
+  .row {
+    height: $size-pe-100;
+
+    div {
+      height: $size-pe-100;
+
+      &::after {
+        width: $size-pe-100;
+        height: $size-pe-100;
+        content: "";
+        display: block;
+        background-color: rgba($color: red, $alpha: 0.2);
+      }
+    }
+  }
+}
+
+:host {
+  width: $size-pe-100;
+  height: $size-pe-100;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: $index-5;
+  pointer-events: none;
+}

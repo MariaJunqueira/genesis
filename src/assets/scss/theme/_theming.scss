@@ -1,0 +1,15 @@
+h1 {
+  @include heading($font-bold, $font-size-38, $font-height-40);
+}
+
+h2 {
+  @include heading($font-bold, $font-size-28, $font-height-32);
+}
+
+h3 {
+  @include heading($font-bold, $font-size-22, $font-height-26);
+}
+
+h4 {
+  @include heading($font-bold, $font-size-20, $font-height-24);
+}

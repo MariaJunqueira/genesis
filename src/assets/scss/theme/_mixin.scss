@@ -1,0 +1,13 @@
+@mixin heading($_weight, $_size, $_height) {
+  font-weight: $_weight;
+  font-size: $_size;
+  line-height: $_height;
+}
+
+@mixin position($_top, $_right, $_bottom, $_left, $_transform) {
+  top: $_top;
+  right: $_right;
+  bottom: $_bottom;
+  left: $_left;
+  transform: $_transform;
+}

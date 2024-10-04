@@ -165,3 +165,17 @@ dialog {
   color: inherit;
   background-color: inherit;
 }
+
+a {
+  color: inherit;
+  text-decoration: none;
+
+  &:active {
+    color: inherit;
+  }
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}

@@ -1,19 +1,5 @@
 <header>
-  <nav>
-    <ul>
-      <li> {{'header::nav::home' | translate}}</li>
-      <li> {{'header::nav::about' | translate}}</li>
-      <li> {{ 'header::nav::portfolio' | translate}}</li>
-      <li>
-        <select #langSelect (change)="onLangChange(langSelect.value)">
-          <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">
-            {{ lang }}
-          </option>
-        </select>
-      </li>
-    </ul>
-  </nav>
-
+  <app-header></app-header>
 </header>
 <main>
   <router-outlet></router-outlet>

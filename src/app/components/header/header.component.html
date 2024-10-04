@@ -1,0 +1,29 @@
+<nav class="app-header">
+  <a href="/">
+    <img src="logo.png" alt="logo" width="38" height="38" />
+  </a>
+  <ul [attr.opened]="menuOpened">
+    <li>
+      <a href="/"> {{'header::nav::home' | translate }} </a>
+    </li>
+    <li>
+      <a href="/about"> {{'header::nav::about' | translate }} </a>
+    </li>
+    <li>
+      <a href="/portfolio"> {{ 'header::nav::portfolio' | translate }} </a>
+    </li>
+    <!-- <li>
+      <select #langSelect (change)="onLangChange(langSelect.value)">
+        <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">
+          {{ lang }}
+        </option>
+      </select>
+    </li> -->
+  </ul>
+  <a href="mailto:mariaa.junqueira&#64;gmail.com">mariaa.junqueira&#64;gmail.com</a>
+  <button (click)="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </button>
+</nav>

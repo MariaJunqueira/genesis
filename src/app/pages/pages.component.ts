@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-import { HeaderComponent } from '../components/header/header.component';
 import { GridDebugComponent } from '../shared/components/grid-debug/grid-debug.component';
+import { HeaderComponent } from '../shared/components/grid-debug/header/header.component';
 
 @Component({
   selector: 'app-pages',

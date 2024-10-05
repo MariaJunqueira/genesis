@@ -1,4 +1,4 @@
-@mixin heading($_weight, $_size, $_height) {
+@mixin heading($_size, $_weight: 600, $_height: 1.33em) {
   font-weight: $_weight;
   font-size: $_size;
   line-height: $_height;

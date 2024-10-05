@@ -1,0 +1,23 @@
+@import "font-variables";
+
+.app-button {
+  background-color: var(--neutral-800);
+  color: var(--neutral-100);
+  font-size: $font-size-18;
+  font-weight: $font-bold;
+  padding: 24px 60px;
+  border-radius: 80px;
+  text-align: center;
+  box-shadow: none;
+
+  &:hover {
+    transition: color, background-color, box-shadow .3 ease-in-out;
+    background-color: var(--neutral-100);
+    color: var(--neutral-800);
+    box-shadow: 0px 4px 20px -5px rgba(20, 20, 43, 0.15);
+  }
+}
+
+:host {
+  display: inline-block;
+}

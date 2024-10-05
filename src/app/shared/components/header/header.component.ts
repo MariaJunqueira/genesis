@@ -2,8 +2,8 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
-import { CookieService } from '../../../services/cookie/cookie.service';
-import { COOKIE_LANG } from '../../../services/language/language.constant';
+import { CookieService } from '../../services/cookie/cookie.service';
+import { COOKIE_LANG } from '../../services/language/language.constant';
 
 @Component({
   selector: 'app-header',

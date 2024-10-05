@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { GridDebugComponent } from '../shared/components/grid-debug/grid-debug.component';
-import { HeaderComponent } from '../shared/components/grid-debug/header/header.component';
+import { HeaderComponent } from '../shared/components/header/header.component';
 
 @Component({
   selector: 'app-pages',

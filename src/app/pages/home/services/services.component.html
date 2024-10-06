@@ -1,0 +1,8 @@
+<section class="app-services">
+  <h2>{{ 'home::services::heading' | translate }}</h2>
+  <p>{{ 'home::services::description' | translate }}</p>
+
+  <div>
+    <app-tile #appTile *ngFor="let tile of services" [tile]="tile"></app-tile>
+  </div>
+</section>

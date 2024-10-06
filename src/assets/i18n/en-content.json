@@ -4,5 +4,15 @@
   "header::nav::portfolio": "Portfolio",
   "home::hero::overline": "Hello, I'm Maria Junqueira",
   "home::hero::heading": "I enjoy designing tech websites and digital products",
-  "home::hero::cta": "Get in touch"
+  "home::hero::cta": "Get in touch",
+  "home::services::heading": "My Services",
+  "home::services::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non. Viverra nec eu.",
+  "home::services::webDesign::title": "Web Design",
+  "home::services::webDesign::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis viverra mollis nisl.",
+  "home::services::uiuxDesign::title": "UI / UX Design",
+  "home::services::uiuxDesign::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis viverra mollis nisl.",
+  "home::services::productDesign::title": "Product Design",
+  "home::services::productDesign::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis viverra mollis nisl.",
+  "home::services::webDevelopment::title": "Web Development",
+  "home::services::webDevelopment::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis viverra mollis nisl."
 }

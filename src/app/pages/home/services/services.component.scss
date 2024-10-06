@@ -1,0 +1,65 @@
+@import "sizes";
+
+.app-services {
+
+  >h2,
+  >p {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    padding-bottom: 16px;
+  }
+
+  >p {
+    padding-bottom: 40px;
+  }
+
+  >div {
+    padding: 40px;
+    position: relative;
+    z-index: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 40px;
+
+    &::before {
+      content: '';
+      background-color: #f6f7ff;
+      position: absolute;
+      width: 70%;
+      height: 100%;
+      z-index: -1;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      border-radius: 20px;
+    }
+
+    >app-tile {
+      opacity: 0;
+      transition: opacity 1s ease-in;
+
+      &.in-view {
+        opacity: 1;
+      }
+    }
+  }
+
+  @media (max-width: $size-screen-md) {
+
+    >h2,
+    >p {
+      width: 100%;
+    }
+
+    >div {
+      grid-template-columns: repeat(1, 1fr);
+      padding: 20px 0;
+
+      &::before {
+        width: 90%;
+      }
+    }
+  }
+}

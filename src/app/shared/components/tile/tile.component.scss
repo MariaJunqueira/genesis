@@ -1,12 +1,15 @@
 @import "font-variables";
+@import "sizes";
 
 .app-tile {
   padding: 48px;
+  height: 100%;
   background-color: var(--neutral-100);
   border-radius: 20px;
   box-shadow: 0px 4px 20px -5px rgba(20, 20, 43, 0.15);
 
   display: flex;
+  align-items: flex-start;
   gap: 28px;
 
   >img {
@@ -17,6 +20,12 @@
     >h3 {
       padding-bottom: 12px;
     }
+  }
+}
+
+@media (max-width: $size-screen-lg) {
+  .app-tile {
+    flex-direction: column;
   }
 }
 

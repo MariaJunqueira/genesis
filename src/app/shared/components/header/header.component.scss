@@ -1,17 +1,19 @@
 .app-header {
-  padding: 20px;
+  padding: 20px 0;
   position: relative;
+  z-index: 10;
 
   display: flex;
   gap: 20px;
   align-items: center;
   justify-content: space-between;
+  background-color: var(--neutral-100);
 
   a {
     font-weight: 500;
   }
 
-  & > a {
+  &>a {
     &:first-of-type {
       &:hover {
         transform: translate(0, -6px);
@@ -25,13 +27,13 @@
     }
   }
 
-  & > ul {
+  &>ul {
     display: flex;
     gap: 40px;
     align-items: center;
 
-    & > li {
-      & > a {
+    &>li {
+      &>a {
         &:hover {
           color: var(--neutral-600);
         }
@@ -39,18 +41,18 @@
     }
   }
 
-  & > button {
+  &>button {
     display: none;
   }
 
   @media (max-width: 768px) {
-    & > ul {
+    &>ul {
       &[opened="false"] {
         display: none;
       }
 
       &[opened="true"] {
-        padding: 0 24px 36px;
+        padding: 0 4px 36px;
         flex-direction: column;
         align-items: flex-start;
         background-color: var(--neutral-100);
@@ -62,7 +64,7 @@
       }
     }
 
-    & > button {
+    &>button {
       background-color: var(--neutral-800);
       width: 56px;
       height: 56px;
@@ -73,7 +75,7 @@
       justify-content: center;
       gap: 4px;
 
-      & > div {
+      &>div {
         width: 24px;
         min-height: 2px;
         background-color: var(--neutral-100);
@@ -82,7 +84,7 @@
       }
     }
 
-    & > a {
+    &>a {
       &:last-of-type {
         display: none;
       }

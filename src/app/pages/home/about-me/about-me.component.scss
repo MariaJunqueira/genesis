@@ -1,0 +1,37 @@
+@import "sizes";
+
+.app-about-me {
+  display: flex;
+  gap: 24px;
+  align-items: center;
+
+  >figure {
+    flex: 1;
+
+    >img {
+      width: 100%;
+      border-radius: 20px;
+    }
+  }
+
+  >article {
+    flex: 1;
+
+    >h2 {
+      padding-bottom: 24px;
+    }
+
+    >p {
+      padding-bottom: 48px;
+    }
+  }
+
+  @media (max-width: $size-screen-md) {
+    flex-direction: column;
+    gap: 48px;
+
+    >figure {
+      order: 1;
+    }
+  }
+}

@@ -1,0 +1,73 @@
+@import "font-variables";
+@import "sizes";
+
+.app-hero {
+  padding: 70px 0 100px 0;
+  display: flex;
+  gap: $size-px-24;
+  align-items: center;
+  justify-content: space-between;
+
+  >article {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: $size-px-20;
+
+    >span {
+      color: var(--neutral-700);
+      font-weight: $font-bold;
+    }
+
+    >h1 {
+      >span {
+        position: relative;
+        z-index: 1;
+      }
+
+      >i {
+        position: relative;
+        display: block;
+        width: 100%;
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: 0;
+          left: -50px;
+          width: 80%;
+          height: 44px;
+          border-top: 20px solid #EBF8FF;
+          border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+          transform: scaleX(1) scaleY(0.7) translateY(44px);
+        }
+      }
+
+      @media (max-width: 768px) {
+        >i {
+          &::before {
+            left: 0;
+            transform: scaleX(1) scaleY(0.7) translateY(44px) translateX(10%);
+          }
+        }
+      }
+    }
+
+    >app-button {
+      padding-top: $size-px-40;
+    }
+  }
+
+  >figure {
+    flex: 1;
+
+    >img {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    text-align: center;
+    flex-direction: column;
+  }
+}

@@ -2,13 +2,14 @@ import { CommonModule } from '@angular/common';
 import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { ButtonComponent } from '../../../shared/components/button/button.component';
 import { TileComponent } from '../../../shared/components/tile/tile.component';
 import { Tile } from '../../../shared/components/tile/tile.model';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [CommonModule, TileComponent, TranslateModule],
+  imports: [ButtonComponent, CommonModule, TileComponent, TranslateModule],
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss']
 })

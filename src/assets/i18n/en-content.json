@@ -15,6 +15,7 @@
   "home::services::productDesign::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis viverra mollis nisl.",
   "home::services::webDevelopment::title": "Web Development",
   "home::services::webDevelopment::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut iaculis viverra mollis nisl.",
+  "home::services::cta": "Get in touch",
   "home::about-me::heading": "About me",
   "home::about-me::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non. Viverra nec eu, in ridiculus egestas mi. Vulputate tristique porttitor enim aliquam ullamcorper. Velit dui laoreet in et mus.",
   "home::about-me::cta": "More about me"

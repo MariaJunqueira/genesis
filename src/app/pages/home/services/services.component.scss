@@ -1,6 +1,9 @@
 @import "sizes";
 
 .app-services {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
   >h2,
   >p {
@@ -44,6 +47,10 @@
         opacity: 1;
       }
     }
+  }
+
+  >app-button {
+    padding: 48px 0;
   }
 
   @media (max-width: $size-screen-md) {

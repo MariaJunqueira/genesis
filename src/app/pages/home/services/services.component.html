@@ -5,4 +5,7 @@
   <div>
     <app-tile #appTile *ngFor="let tile of services" [tile]="tile"></app-tile>
   </div>
+  <app-button>
+    {{'home::services::cta' | translate}}
+  </app-button>
 </section>

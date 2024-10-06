@@ -36,28 +36,26 @@ export class ServicesComponent implements AfterViewInit {
     }
   ];
 
-  // Capture references to all app-tile elements
   @ViewChildren('appTile', { read: ElementRef }) appTiles!: QueryList<ElementRef>;
 
   constructor(private elementRef: ElementRef) { }
 
   ngAfterViewInit(): void {
     const observerOptions = {
-      root: null, // Default is viewport
-      threshold: 0.1 // Trigger when 10% of the tile is visible
+      root: null,
+      threshold: 0.1
     };
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('in-view'); // Add 'in-view' class when in viewport
+          entry.target.classList.add('in-view');
         }
       });
     }, observerOptions);
 
-    // Iterate over the tiles and observe the native elements
     this.appTiles.forEach((tile) => {
-      observer.observe(tile.nativeElement); // Use nativeElement to access DOM
+      observer.observe(tile.nativeElement);
     });
   }
 }

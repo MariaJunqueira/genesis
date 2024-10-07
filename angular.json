@@ -33,6 +33,7 @@
             "assets": [
               "src/robots.txt",
               "src/favicon.ico",
+              "src/robots.txt" ,
               "src/assets",
               {
                 "glob": "**/*",

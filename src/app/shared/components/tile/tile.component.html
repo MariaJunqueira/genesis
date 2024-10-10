@@ -1,8 +1,12 @@
 <article class="app-tile">
-  <img *ngIf="tile().icon" [src]="tile().icon" alt="{{ tile().title  | translate}}" width="76" height="76"
+  <img *ngIf="tile().icon" [src]="tile().icon" alt="{{ tile().title | translate}}" width="76" height="76"
     loading="lazy">
   <div>
-    <ng-content #heading></ng-content>
+    <h3 *ngIf="tile().title">{{ tile().title | translate}}
+      <p *ngIf="tile().subtitle">{{ tile().subtitle! |
+        translate}}
+      </p>
+    </h3>
     <p *ngIf="tile().description">{{ tile().description | translate}}</p>
   </div>
 </article>

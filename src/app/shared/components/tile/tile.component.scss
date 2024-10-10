@@ -19,6 +19,11 @@
   >div {
     >h3 {
       padding-bottom: 12px;
+      display: flex;
+
+      >p {
+        margin-left: auto;
+      }
     }
   }
 }

@@ -4,6 +4,7 @@
   >article {
     display: flex;
     justify-content: space-between;
+    padding-bottom: 60px;
   }
 
   @media (max-width: $size-screen-md) {

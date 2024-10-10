@@ -1,0 +1,22 @@
+@import "sizes";
+
+.app-resume {
+  >article {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: $size-screen-md) {
+    >article {
+      flex-direction: column;
+
+      >h2 {
+        padding-bottom: 24px;
+      }
+
+      >app-button {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -2,9 +2,8 @@
   <h2>{{ 'home::services::heading' | translate }}</h2>
   <p>{{ 'home::services::description' | translate }}</p>
 
-  <div>
-    <app-tile #appTile *ngFor="let tile of services" [tile]="tile"></app-tile>
-  </div>
+  <app-tile-grid [tiles]="services"></app-tile-grid>
+
   <app-button>
     {{'home::services::cta' | translate}}
   </app-button>

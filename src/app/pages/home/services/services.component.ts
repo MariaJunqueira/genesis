@@ -1,19 +1,19 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ElementRef, QueryList, ViewChildren } from '@angular/core';
+import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 import { ButtonComponent } from '../../../shared/components/button/button.component';
-import { TileComponent } from '../../../shared/components/tile/tile.component';
+import { TileGridComponent } from '../../../shared/components/tile-grid/tile-grid.component';
 import { Tile } from '../../../shared/components/tile/tile.model';
 
 @Component({
   selector: 'app-services',
   standalone: true,
-  imports: [ButtonComponent, CommonModule, TileComponent, TranslateModule],
+  imports: [ButtonComponent, CommonModule, TileGridComponent, TranslateModule],
   templateUrl: './services.component.html',
   styleUrls: ['./services.component.scss']
 })
-export class ServicesComponent implements AfterViewInit {
+export class ServicesComponent {
   services: Array<Tile> = [
     {
       title: 'home::services::webDesign::title',
@@ -36,27 +36,4 @@ export class ServicesComponent implements AfterViewInit {
       icon: 'assets/icons/code.svg',
     }
   ];
-
-  @ViewChildren('appTile', { read: ElementRef }) appTiles!: QueryList<ElementRef>;
-
-  constructor(private elementRef: ElementRef) { }
-
-  ngAfterViewInit(): void {
-    const observerOptions = {
-      root: null,
-      threshold: 0.1
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('in-view');
-        }
-      });
-    }, observerOptions);
-
-    this.appTiles.forEach((tile) => {
-      observer.observe(tile.nativeElement);
-    });
-  }
 }

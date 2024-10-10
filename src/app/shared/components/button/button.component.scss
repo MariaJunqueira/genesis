@@ -1,6 +1,7 @@
 @import "font-variables";
 
 .app-button {
+  width: 100%;
   background-color: var(--neutral-800);
   color: var(--neutral-100);
   font-size: $font-size-18;

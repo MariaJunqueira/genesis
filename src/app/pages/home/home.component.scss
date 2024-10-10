@@ -1,0 +1,11 @@
+@import "sizes";
+
+.app-home {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+
+  @media (max-size: $size-screen-md) {
+    gap: 40px;
+  }
+}

@@ -18,5 +18,7 @@
   "home::services::cta": "Get in touch",
   "home::about-me::heading": "About me",
   "home::about-me::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non. Viverra nec eu, in ridiculus egestas mi. Vulputate tristique porttitor enim aliquam ullamcorper. Velit dui laoreet in et mus.",
-  "home::about-me::cta": "More about me"
+  "home::about-me::cta": "More about me",
+  "home::resume::heading": "Take a look at my resume",
+  "home::resume::cta": "See full resume"
 }

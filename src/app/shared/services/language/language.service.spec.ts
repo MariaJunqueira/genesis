@@ -1,31 +1,32 @@
+import { provideZonelessChangeDetection } from '@angular/core';
 import { TestBed } from '@angular/core/testing';
-import { TranslateService } from '@ngx-translate/core';
+import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
 import { CookieService } from '../cookie/cookie.service';
 import { LanguageService } from './language.service';
 
 describe('LanguageService', () => {
   let service: LanguageService;
-  let translateService: jasmine.SpyObj<TranslateService>;
-  let cookieService: jasmine.SpyObj<CookieService>;
+  let translateService: TranslateService;
+  let cookieServiceMock: any;
 
   beforeEach(() => {
-    translateService = jasmine.createSpyObj('TranslateService', [
-      'addLangs',
-      'setDefaultLang',
-      'use',
-      'getBrowserLang',
-    ]);
-    cookieService = jasmine.createSpyObj('CookieService', ['getCookie', 'setCookie']);
+    cookieServiceMock = jasmine.createSpyObj('CookieService', ['getCookie', 'setCookie']);
 
     TestBed.configureTestingModule({
+      imports: [TranslateModule.forRoot()],
       providers: [
+        provideZonelessChangeDetection(),
         LanguageService,
-        { provide: TranslateService, useValue: translateService },
-        { provide: CookieService, useValue: cookieService },
+        TranslateService,
+        { provide: CookieService, useValue: cookieServiceMock }
       ],
     });
-    service = TestBed.inject(LanguageService);
+    translateService = TestBed.inject(TranslateService); // Inject TranslateService first
+    spyOn(translateService, 'use');
+    spyOn(translateService, 'addLangs');
+    spyOn(translateService, 'setDefaultLang');
+    service = TestBed.inject(LanguageService); // Then inject service (which calls initLang in constructor)
   });
 
   it('should be created', () => {
@@ -39,27 +40,27 @@ describe('LanguageService', () => {
   });
 
   it('should use language from cookie if available', () => {
-    const mockLang = 'de';
-    cookieService.getCookie.and.returnValue(mockLang);
+    const mockLang = 'pt';
+    cookieServiceMock.getCookie.and.returnValue(mockLang);
     service.initLang();
-    expect(cookieService.getCookie).toHaveBeenCalled();
+    expect(cookieServiceMock.getCookie).toHaveBeenCalled();
     expect(translateService.use).toHaveBeenCalledWith(mockLang);
   });
 
   it('should fallback to browser language if cookie not set', () => {
-    const browserLang = 'fr';
-    cookieService.getCookie.and.returnValue(null);
-    translateService.getBrowserLang.and.returnValue(browserLang);
+    const browserLang = 'pt';
+    cookieServiceMock.getCookie.and.returnValue(null);
+    spyOn(translateService, 'getBrowserLang').and.returnValue(browserLang);
     service.initLang();
-    expect(cookieService.getCookie).toHaveBeenCalled();
+    expect(cookieServiceMock.getCookie).toHaveBeenCalled();
     expect(translateService.getBrowserLang).toHaveBeenCalled();
     expect(translateService.use).toHaveBeenCalledWith(browserLang);
   });
 
   it('should use default language if browser language is not supported', () => {
     const unsupportedLang = 'es'; // Assuming 'es' is not in the SUPPORTED_LANGS
-    cookieService.getCookie.and.returnValue(null);
-    translateService.getBrowserLang.and.returnValue(unsupportedLang);
+    cookieServiceMock.getCookie.and.returnValue(null);
+    spyOn(translateService, 'getBrowserLang').and.returnValue(unsupportedLang);
     service.initLang();
     // Assuming 'en' is the DEFAULT_LANG and not including 'es' in SUPPORTED_LANGS
     expect(translateService.use).toHaveBeenCalledWith('en');
@@ -67,9 +68,9 @@ describe('LanguageService', () => {
 
   it('should set language cookie if using browser language', () => {
     const browserLang = 'en';
-    cookieService.getCookie.and.returnValue(null);
-    translateService.getBrowserLang.and.returnValue(browserLang);
+    cookieServiceMock.getCookie.and.returnValue(null);
+    spyOn(translateService, 'getBrowserLang').and.returnValue(browserLang);
     service.initLang();
-    expect(cookieService.setCookie).toHaveBeenCalledWith(jasmine.any(String), browserLang, 360);
+    expect(cookieServiceMock.setCookie).toHaveBeenCalledWith(jasmine.any(String), browserLang, 360);
   });
 });

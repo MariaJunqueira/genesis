@@ -3,10 +3,10 @@ import { Component, effect, input, signal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-    selector: 'app-carousel',
-    imports: [TranslateModule],
-    templateUrl: './carousel.component.html',
-    styleUrl: './carousel.component.scss' // Angular 18 supports styleUrl
+  selector: 'app-carousel',
+  imports: [TranslateModule],
+  templateUrl: './carousel.component.html',
+  styleUrl: './carousel.component.scss' // Angular 18 supports styleUrl
 })
 export class CarouselComponent {
   heading = input.required<string>();
@@ -37,7 +37,7 @@ export class CarouselComponent {
       this.carouselItems.set(this.items()); // Separate signal to manage the dynamic list
 
       this.setAutoAdvance();
-    }, { allowSignalWrites: true }); // Enable signal writes within the effect
+    }); // Enable signal writes within the effect
   }
 
   next() {
@@ -58,7 +58,10 @@ export class CarouselComponent {
   onDragging(event: MouseEvent) {
     this.dragEnd = event.pageX;
     const dragDistance = this.dragEnd - this.dragStart;
-    (document.querySelector('.test') as HTMLElement).style.transform = `translateX(${dragDistance}px)`;
+    const element = document.querySelector('.test') as HTMLElement;
+    if (element) {
+      element.style.transform = `translateX(${dragDistance}px)`;
+    }
   }
 
   onDragEnd() {
@@ -81,7 +84,10 @@ export class CarouselComponent {
 
     // Move the carousel in the direction specified
     const newTransform = direction * this.slideWidth;
-    (document.querySelector('.test') as HTMLElement).style.transform = `translateX(${newTransform}px)`;
+    const element = document.querySelector('.test') as HTMLElement;
+    if (element) {
+      element.style.transform = `translateX(${newTransform}px)`;
+    }
 
     setTimeout(() => {
       this.isTransitioning.set(false);
@@ -105,7 +111,10 @@ export class CarouselComponent {
 
   resetSlidePosition() {
     // Reset the transform to zero after shifting the slides
-    (document.querySelector('.test') as HTMLElement).style.transform = 'translateX(0px)';
+    const element = document.querySelector('.test') as HTMLElement;
+    if (element) {
+      element.style.transform = 'translateX(0px)';
+    }
   }
 
   private setAutoAdvance() {

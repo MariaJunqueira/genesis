@@ -1,4 +1,6 @@
+import { provideZonelessChangeDetection } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { TileComponent } from './tile.component';
 
@@ -8,12 +10,14 @@ describe('TileComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [TileComponent]
+      imports: [TileComponent, TranslateModule.forRoot()],
+      providers: [provideZonelessChangeDetection()]
     })
-    .compileComponents();
+      .compileComponents();
 
     fixture = TestBed.createComponent(TileComponent);
     component = fixture.componentInstance;
+    fixture.componentRef.setInput('tile', { title: '', description: '', icon: '' });
     fixture.detectChanges();
   });
 

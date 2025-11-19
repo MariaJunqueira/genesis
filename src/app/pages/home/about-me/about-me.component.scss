@@ -1,4 +1,4 @@
-@import "sizes";
+@use "sizes" as *;
 
 .app-about-me {
   display: flex;

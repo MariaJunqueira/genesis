@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
-@import "reset";
-@import "flexbox-grid";
-@import "variables";
-@import "font-face";
-@import "default";
-@import "theme/theme";
+@use "reset";
+@use "flexbox-grid";
+@use "variables";
+@use "font-face";
+@use "default";
+@use "theme/theme";

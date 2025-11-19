@@ -1,5 +1,5 @@
-@import "font-variables";
-@import "sizes";
+@use "font-variables" as *;
+@use "sizes" as *;
 
 .app-tile {
   padding: 48px;

@@ -24,5 +24,12 @@
   "home::about-me::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non. Viverra nec eu, in ridiculus egestas mi. Vulputate tristique porttitor enim aliquam ullamcorper. Velit dui laoreet in et mus.",
   "home::about-me::cta": "More about me",
   "home::resume::heading": "Take a look at my resume",
-  "home::resume::cta": "See full resume"
+  "home::resume::cta": "See full resume",
+  "home::portfolio::heading": "Take a look at my design portfolio",
+  "home::portfolio::projects::todoListRedesign::title": "Todo List Mobile App Redesign",
+  "home::portfolio::projects::todoListRedesign::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non dolor sit consectetur do.",
+  "home::portfolio::projects::todoListRedesign::cta": "Read case study",
+  "home::portfolio::projects::analyticsDashboardDesign::title": "Analytics Dashboard Design",
+  "home::portfolio::projects::analyticsDashboardDesign::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non dolor sit consectetur do.",
+  "home::portfolio::projects::analyticsDashboardDesign::cta": "Read case study"
 }

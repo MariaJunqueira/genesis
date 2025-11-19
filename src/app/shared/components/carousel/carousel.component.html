@@ -1,0 +1,20 @@
+<section class="app-carousel">
+  <div>
+    <h2>{{heading | translate}}</h2>
+    <nav>
+      <button (click)="previous()"></button>
+      <button (click)="next()"></button>
+    </nav>
+  </div>
+
+  <article style="--current-index: {{currentIndex()}}">
+    <div *ngFor="let item of items; let i = index" [class.active]="currentIndex() === i">
+      <div>
+        <img [src]="item.image" [alt]="item.title  | translate" />
+      </div>
+      <h3>{{ item.title | translate}}</h3>
+      <p>{{ item.description | translate}}</p>
+      <a [href]="item.link.url">{{ item.link.text }}</a>
+    </div>
+  </article>
+</section>

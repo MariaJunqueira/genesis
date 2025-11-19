@@ -1,0 +1,95 @@
+.app-carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  >div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 40px;
+
+    >nav {
+      display: flex;
+      gap: 20px;
+
+      >button {
+        width: 80px;
+        height: 80px;
+        color: var(--neutral-800);
+        background-color: var(--neutral-300);
+        border-radius: 50%;
+        position: relative;
+
+        &::before {
+          content: "";
+          margin: auto;
+          width: 16px;
+          height: 16px;
+          border-right: 2px solid black;
+          border-bottom: 2px solid black;
+          display: block;
+          position: absolute;
+          top: calc(50% - 9px);
+          left: 50%;
+          transform: rotate(-45deg) translate(-50%, -50%);
+        }
+
+        &:nth-of-type(1) {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+
+  >article {
+    display: flex;
+    gap: 23px;
+    transition: transform 0.5s ease-in-out;
+    transform: translateX(calc(-500px * var(--current-index)));
+
+    >div {
+      box-sizing: border-box;
+      width: 500px;
+      max-width: 500px;
+      flex-shrink: 0;
+
+      >div {
+        max-width: 500px;
+        overflow: hidden;
+        border-radius: 24px;
+        margin-bottom: 52px;
+
+        >img {
+          width: 100%;
+          object-fit: cover;
+
+          border-radius: 24px;
+          transition: transform 0.5s ease-in-out;
+          transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+          transform-style: preserve-3d;
+        }
+      }
+
+      >h3 {
+        padding-bottom: 16px;
+      }
+
+      >p {
+        padding-bottom: 32px;
+      }
+
+      >a {
+        font-weight: 600;
+      }
+
+      &:hover {
+        >div {
+          >img {
+            transform: translate3d(0px, 0px, 0px) scale3d(1.08, 1.08, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -8,7 +8,7 @@ import { Tile } from '../../../shared/components/tile/tile.model';
 
 @Component({
     selector: 'app-services',
-    imports: [ButtonComponent, CommonModule, TileGridComponent, TranslateModule],
+    imports: [ButtonComponent, TileGridComponent, TranslateModule],
     templateUrl: './services.component.html',
     styleUrls: ['./services.component.scss']
 })

@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component } from '@angular/core';
 import { TranslateModule, TranslateService } from '@ngx-translate/core';
 
@@ -7,7 +7,7 @@ import { COOKIE_LANG } from '../../services/language/language.constant';
 
 @Component({
     selector: 'app-header',
-    imports: [CommonModule, TranslateModule],
+    imports: [TranslateModule],
     templateUrl: './header.component.html',
     styleUrl: './header.component.scss'
 })

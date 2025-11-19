@@ -1,3 +1,5 @@
 <section class="app-tile-grid">
-  <app-tile #appTile *ngFor="let tile of tiles()" [tile]="tile"> </app-tile>
+  @for (tile of tiles(); track tile) {
+    <app-tile #appTile [tile]="tile"> </app-tile>
+  }
 </section>

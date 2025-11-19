@@ -1,4 +1,4 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, ElementRef, input, QueryList, ViewChildren } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
@@ -7,7 +7,7 @@ import { Tile } from '../tile/tile.model';
 
 @Component({
     selector: 'app-tile-grid',
-    imports: [CommonModule, TileComponent, TranslateModule],
+    imports: [TileComponent, TranslateModule],
     templateUrl: './tile-grid.component.html',
     styleUrl: './tile-grid.component.scss'
 })

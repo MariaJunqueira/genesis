@@ -1,10 +1,10 @@
-import { CommonModule } from '@angular/common';
+
 import { Component, effect, input, signal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
     selector: 'app-carousel',
-    imports: [CommonModule, TranslateModule],
+    imports: [TranslateModule],
     templateUrl: './carousel.component.html',
     styleUrl: './carousel.component.scss' // Angular 18 supports styleUrl
 })

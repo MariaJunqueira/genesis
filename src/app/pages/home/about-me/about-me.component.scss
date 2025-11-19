@@ -40,6 +40,20 @@
       }
     }
   }
+
+  @media (max-width: $size-screen-sm) {
+    gap: 32px;
+
+    >article {
+      >h2 {
+        padding-bottom: 16px;
+      }
+
+      >p {
+        padding-bottom: 32px;
+      }
+    }
+  }
 }
 
 :host {

@@ -34,6 +34,17 @@
   }
 }
 
+@media (max-width: $size-screen-sm) {
+  .app-tile {
+    padding: 24px;
+    gap: 16px;
+
+    >img {
+      border-radius: 12px;
+    }
+  }
+}
+
 :host {
   display: inline-block;
   width: 100%;

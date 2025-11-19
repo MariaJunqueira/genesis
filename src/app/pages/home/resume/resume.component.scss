@@ -20,4 +20,14 @@
       }
     }
   }
+
+  @media (max-width: $size-screen-sm) {
+    >article {
+      padding-bottom: 40px;
+
+      >h2 {
+        padding-bottom: 16px;
+      }
+    }
+  }
 }

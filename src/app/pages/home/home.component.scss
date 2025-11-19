@@ -1,4 +1,4 @@
-@import "sizes";
+@use "sizes" as *;
 
 .app-home {
   display: flex;

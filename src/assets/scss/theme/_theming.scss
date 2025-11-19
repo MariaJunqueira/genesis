@@ -1,3 +1,6 @@
+@use "mixin" as *;
+@use "../font-variables" as *;
+
 h1 {
   @include heading($font-size-68);
 }

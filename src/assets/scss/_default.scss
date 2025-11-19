@@ -1,3 +1,6 @@
+@use "sizes" as *;
+@use "font-variables" as *;
+
 html,
 body {
   height: $size-pe-100;

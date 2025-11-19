@@ -1,4 +1,4 @@
-@import "sizes";
+@use "sizes" as *;
 
 .app-tile-grid {
   padding: 40px;

@@ -1,11 +1,10 @@
 import { Component, HostBinding, HostListener } from '@angular/core';
 
 @Component({
-  selector: 'app-grid-debug',
-  standalone: true,
-  imports: [],
-  templateUrl: './grid-debug.component.html',
-  styleUrls: ['./grid-debug.component.scss'],
+    selector: 'app-grid-debug',
+    imports: [],
+    templateUrl: './grid-debug.component.html',
+    styleUrls: ['./grid-debug.component.scss']
 })
 export class GridDebugComponent {
   @HostBinding('style.display') display: string = 'none';

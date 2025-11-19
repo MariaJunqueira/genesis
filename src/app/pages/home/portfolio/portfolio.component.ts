@@ -4,11 +4,10 @@ import { TranslateModule } from '@ngx-translate/core';
 import { CarouselComponent } from '../../../shared/components/carousel/carousel.component';
 
 @Component({
-  selector: 'app-portfolio',
-  standalone: true,
-  imports: [CarouselComponent, TranslateModule],
-  templateUrl: './portfolio.component.html',
-  styleUrl: './portfolio.component.scss'
+    selector: 'app-portfolio',
+    imports: [CarouselComponent, TranslateModule],
+    templateUrl: './portfolio.component.html',
+    styleUrl: './portfolio.component.scss'
 })
 export class PortfolioComponent {
 

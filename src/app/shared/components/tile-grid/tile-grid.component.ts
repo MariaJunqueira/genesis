@@ -6,11 +6,10 @@ import { TileComponent } from '../tile/tile.component';
 import { Tile } from '../tile/tile.model';
 
 @Component({
-  selector: 'app-tile-grid',
-  standalone: true,
-  imports: [CommonModule, TileComponent, TranslateModule],
-  templateUrl: './tile-grid.component.html',
-  styleUrl: './tile-grid.component.scss'
+    selector: 'app-tile-grid',
+    imports: [CommonModule, TileComponent, TranslateModule],
+    templateUrl: './tile-grid.component.html',
+    styleUrl: './tile-grid.component.scss'
 })
 export class TileGridComponent {
   tiles = input.required<Tile[]>();

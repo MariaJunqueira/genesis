@@ -6,11 +6,10 @@ import { CookieService } from '../../services/cookie/cookie.service';
 import { COOKIE_LANG } from '../../services/language/language.constant';
 
 @Component({
-  selector: 'app-header',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+    selector: 'app-header',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './header.component.html',
+    styleUrl: './header.component.scss'
 })
 export class HeaderComponent {
   constructor(public translate: TranslateService, private cookieService: CookieService) { }

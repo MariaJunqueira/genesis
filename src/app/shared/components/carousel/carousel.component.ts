@@ -3,11 +3,10 @@ import { Component, effect, input, signal } from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
-  selector: 'app-carousel',
-  standalone: true,
-  imports: [CommonModule, TranslateModule],
-  templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.scss' // Angular 18 supports styleUrl
+    selector: 'app-carousel',
+    imports: [CommonModule, TranslateModule],
+    templateUrl: './carousel.component.html',
+    styleUrl: './carousel.component.scss' // Angular 18 supports styleUrl
 })
 export class CarouselComponent {
   heading = input.required<string>();

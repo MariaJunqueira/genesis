@@ -7,11 +7,10 @@ import { TileGridComponent } from '../../../shared/components/tile-grid/tile-gri
 import { Tile } from '../../../shared/components/tile/tile.model';
 
 @Component({
-  selector: 'app-services',
-  standalone: true,
-  imports: [ButtonComponent, CommonModule, TileGridComponent, TranslateModule],
-  templateUrl: './services.component.html',
-  styleUrls: ['./services.component.scss']
+    selector: 'app-services',
+    imports: [ButtonComponent, CommonModule, TileGridComponent, TranslateModule],
+    templateUrl: './services.component.html',
+    styleUrls: ['./services.component.scss']
 })
 export class ServicesComponent {
   services: Array<Tile> = [

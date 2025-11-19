@@ -1,95 +1,147 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f2f2f2;
+}
+
+/* Carousel container styling */
 .app-carousel {
   position: relative;
   width: 100%;
   overflow: hidden;
+  background: #333;
+  color: #fff;
 
   >div {
+    text-align: center;
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 40px;
+    justify-content: center;
+    margin-bottom: 20px;
 
-    >nav {
-      display: flex;
-      gap: 20px;
+    button {
+      cursor: pointer;
+      background-color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      transition: background-color 0.3s ease;
 
-      >button {
-        width: 80px;
-        height: 80px;
-        color: var(--neutral-800);
-        background-color: var(--neutral-300);
-        border-radius: 50%;
-        position: relative;
-
-        &::before {
-          content: "";
-          margin: auto;
-          width: 16px;
-          height: 16px;
-          border-right: 2px solid black;
-          border-bottom: 2px solid black;
-          display: block;
-          position: absolute;
-          top: calc(50% - 9px);
-          left: 50%;
-          transform: rotate(-45deg) translate(-50%, -50%);
-        }
-
-        &:nth-of-type(1) {
-          transform: rotate(-180deg);
-        }
+      &:hover {
+        background-color: #ddd;
       }
     }
   }
 
-  >article {
+  /* Carousel slide area */
+  .test {
     display: flex;
     gap: 23px;
-    transition: transform 0.5s ease-in-out;
-    transform: translateX(calc(-500px * var(--current-index)));
+    transition: transform 0.7s ease-in-out;
+    width: 100%;
+    transform: translateX(0);
+    /* Initial state */
 
-    >div {
-      box-sizing: border-box;
-      width: 500px;
-      max-width: 500px;
-      flex-shrink: 0;
+    /* Handle the transition state */
+    &.transitioning {
+      transition: transform 0.7s ease-in-out;
+    }
+  }
 
-      >div {
-        max-width: 500px;
-        overflow: hidden;
-        border-radius: 24px;
-        margin-bottom: 52px;
+  /* Individual slide styling */
+  .test>div {
+    box-sizing: border-box;
+    width: 500px;
+    max-width: 500px;
+    flex-shrink: 0;
+    background: #222;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 
-        >img {
-          width: 100%;
-          object-fit: cover;
+    figure {
+      max-width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      margin-bottom: 16px;
 
-          border-radius: 24px;
-          transition: transform 0.5s ease-in-out;
-          transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-          transform-style: preserve-3d;
-        }
-      }
-
-      >h3 {
-        padding-bottom: 16px;
-      }
-
-      >p {
-        padding-bottom: 32px;
-      }
-
-      >a {
-        font-weight: 600;
-      }
-
-      &:hover {
-        >div {
-          >img {
-            transform: translate3d(0px, 0px, 0px) scale3d(1.08, 1.08, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-          }
-        }
+      img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        transition: transform 0.5s ease-in-out;
       }
     }
+
+    h3 {
+      margin-bottom: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    p {
+      margin-bottom: 10px;
+      font-size: 14px;
+      color: #bbb;
+    }
+
+    a {
+      font-weight: bold;
+      color: #1e90ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #f90;
+      }
+    }
+
+    /* Scale effect on hover */
+    &:hover {
+      figure img {
+        transform: scale(1.08);
+      }
+    }
+  }
+}
+
+/* Dragging effect */
+.app-carousel .test.dragging {
+  cursor: grabbing;
+  transition: none;
+  /* Disable transition during dragging */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .app-carousel .test>div {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+  }
+
+  nav button {
+    padding: 8px 16px;
+    font-size: 14px;
   }
 }

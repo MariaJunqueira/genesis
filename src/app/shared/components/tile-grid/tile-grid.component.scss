@@ -1,7 +1,6 @@
 @import "sizes";
 
 .app-tile-grid {
-  // background-color: cadetblue;
   padding: 40px;
   position: relative;
   z-index: 0;
@@ -31,17 +30,6 @@
 
     &.in-view {
       opacity: 1;
-    }
-  }
-}
-
-@media (max-width: $size-screen-md) {
-  >div {
-    grid-template-columns: repeat(1, 1fr);
-    padding: 20px 0;
-
-    &::before {
-      width: 90%;
     }
   }
 }

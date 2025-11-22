@@ -50,7 +50,7 @@ body {
   }
 
   /* Carousel slide area */
-  .test {
+  >article {
     display: flex;
     gap: 23px;
     transition: transform 0.7s ease-in-out;
@@ -65,7 +65,7 @@ body {
   }
 
   /* Individual slide styling */
-  .test>div {
+  >article>div {
     box-sizing: border-box;
     width: 500px;
     max-width: 500px;
@@ -126,7 +126,7 @@ body {
 }
 
 /* Dragging effect */
-.app-carousel .test.dragging {
+.app-carousel article.dragging {
   cursor: grabbing;
   transition: none;
   /* Disable transition during dragging */
@@ -134,14 +134,89 @@ body {
 
 /* Media Queries for Responsiveness */
 @media (max-width: 768px) {
-  .app-carousel .test>div {
-    width: 100%;
-    max-width: 100%;
-    padding: 10px;
-  }
+  .app-carousel {
+    // h2 {
+    //   font-size: 32px; // Consistent with h1 on tablet
+    //   margin-bottom: 16px;
+    // }
 
-  nav button {
-    padding: 8px 16px;
-    font-size: 14px;
+    nav button {
+      padding: 12px 24px;
+      font-size: 14px;
+    }
+
+    >article>div {
+      width: 100%;
+      max-width: 100%;
+      padding: 20px;
+
+      h3 {
+        font-size: 20px; // Larger, prominent title
+        margin-bottom: 12px;
+      }
+
+      p {
+        font-size: 16px; // Better readability
+        line-height: 1.6em;
+        margin-bottom: 12px;
+      }
+
+      a {
+        font-size: 14px;
+        display: inline-block;
+        margin-top: 8px;
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .app-carousel {
+    h2 {
+      font-size: 24px; // Consistent with h1 on mobile
+      margin-bottom: 12px;
+    }
+
+    nav {
+      margin-bottom: 16px;
+
+      button {
+        padding: 10px 20px;
+        font-size: 13px;
+        margin: 0 5px;
+      }
+    }
+
+    >article>div {
+      padding: 16px;
+      border-radius: 8px;
+
+      figure {
+        border-radius: 8px;
+        margin-bottom: 12px;
+      }
+
+      h3 {
+        font-size: 18px; // Prominent but not overwhelming
+        margin-bottom: 8px;
+        line-height: 1.3em;
+      }
+
+      p {
+        font-size: 15px;
+        line-height: 1.6em;
+        margin-bottom: 10px;
+        color: #ccc; // Better contrast
+      }
+
+      a {
+        font-size: 14px;
+        margin-top: 6px;
+        padding: 8px 16px;
+        background-color: rgba(30, 144, 255, 0.1);
+        border-radius: 4px;
+        display: inline-block;
+      }
+    }
   }
 }

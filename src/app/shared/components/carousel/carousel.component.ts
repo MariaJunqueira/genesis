@@ -31,7 +31,7 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
   @ViewChild('carouselTrack') carouselTrack!: ElementRef<HTMLElement>;
 
   private slideWidth = 0; // Dynamic width
-  private gap = 23; // Gap between slides
+  private gap = 24; // Gap between slides
   private threshold = 100; // Threshold for drag movement
   private startX = 0;
   private currentTranslate = 0;
@@ -84,6 +84,12 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
       const firstSlide = this.carouselTrack.nativeElement.firstElementChild as HTMLElement;
       if (firstSlide) {
         this.slideWidth = firstSlide.offsetWidth;
+
+        // Get gap from computed style
+        const style = window.getComputedStyle(this.carouselTrack.nativeElement);
+        const gap = parseFloat(style.gap || style.columnGap || '0');
+        this.gap = isNaN(gap) ? 0 : gap;
+
         this.updateTransform();
       }
     }
@@ -120,7 +126,6 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
 
     let newIndex = this.currentIndex() + direction;
 
-    // Allow going out of bounds of the middle set, we snap later
     this.currentIndex.set(newIndex);
 
     if (this.carouselTrack) {
@@ -182,22 +187,21 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
 
     if (event instanceof MouseEvent) {
       this.startX = event.pageX;
-    } else {
+    } else if (event instanceof TouchEvent) {
       this.startX = event.touches[0].clientX;
     }
 
     this.animationID = requestAnimationFrame(this.animation.bind(this));
 
     if (isPlatformBrowser(this.platformId)) {
-      const moveEvent = event instanceof MouseEvent ? 'mousemove' : 'touchmove';
-      const endEvent = event instanceof MouseEvent ? 'mouseup' : 'touchend';
-
-      window.addEventListener(moveEvent, this.onDragging);
-      window.addEventListener(endEvent, this.onDragEnd);
-
-      // Also handle mouseleave as end for mouse
       if (event instanceof MouseEvent) {
+        window.addEventListener('mousemove', this.onDragging);
+        window.addEventListener('mouseup', this.onDragEnd);
         window.addEventListener('mouseleave', this.onDragEnd);
+      } else {
+        // Passive: false is required to preventDefault in touchmove
+        window.addEventListener('touchmove', this.onDragging, { passive: false });
+        window.addEventListener('touchend', this.onDragEnd);
       }
     }
 
@@ -215,6 +219,10 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     if (event instanceof MouseEvent) {
       currentX = event.pageX;
     } else if (event instanceof TouchEvent) {
+      // Prevent scrolling while dragging
+      if (event.cancelable) {
+        event.preventDefault();
+      }
       currentX = event.touches[0].clientX;
     }
 

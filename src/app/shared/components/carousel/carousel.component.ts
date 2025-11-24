@@ -7,9 +7,11 @@ import { TranslateModule } from '@ngx-translate/core';
   selector: 'app-carousel',
   imports: [TranslateModule],
   templateUrl: './carousel.component.html',
-  styleUrl: './carousel.component.scss' // Angular 18 supports styleUrl
+  styleUrl: './carousel.component.scss'
 })
 export class CarouselComponent implements AfterViewInit, OnDestroy {
+  @ViewChild('carouselTrack') carouselTrack!: ElementRef<HTMLElement>;
+
   heading = input.required<string>();
   items = input.required<Array<{
     image: string;
@@ -18,6 +20,8 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     link: { text: string; url: string }
   }>>();
 
+  currentIndex = signal(0);
+
   carouselItems = signal<Array<{
     image: string;
     title: string;
@@ -25,12 +29,10 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
     link: { text: string; url: string }
   }>>([]);
 
-  currentIndex = signal(0);
-
-  @ViewChild('carouselTrack') carouselTrack!: ElementRef<HTMLElement>;
 
   private realItemCount = 0;
   private timer: any;
+  private isNavigating = false;
 
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     effect(() => {
@@ -52,24 +54,15 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       // Initial positioning: Scroll to the middle set
-      // Wait a tick for layout to ensure dimensions are ready
-      setTimeout(() => {
-        if (this.carouselTrack) {
-          const itemWidth = this.getItemWidth();
-          this.carouselTrack.nativeElement.scrollTo({ left: this.realItemCount * itemWidth, behavior: 'instant' });
-        }
-      }, 0);
+      if (this.carouselTrack) {
+        const itemWidth = this.getItemWidth();
+        this.carouselTrack.nativeElement.scrollTo({ left: this.realItemCount * itemWidth, behavior: 'instant' });
+      }
 
-      // Add scroll listener for infinite loop
       this.carouselTrack.nativeElement.addEventListener('scroll', this.onScroll.bind(this), { passive: true });
-
       this.startAutoAdvance();
     }
   }
-
-
-
-
 
   ngOnDestroy() {
     this.stopAutoAdvance();
@@ -77,8 +70,6 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
       this.carouselTrack.nativeElement.removeEventListener('scroll', this.onScroll.bind(this));
     }
   }
-
-  private isNavigating = false;
 
   next() {
     this.stopAutoAdvance();
@@ -97,41 +88,27 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
 
     const track = this.carouselTrack.nativeElement;
     const itemWidth = this.getItemWidth();
-
-    // Boundaries of the Middle Set
     const startMiddle = this.realItemCount;
     const endMiddle = 2 * this.realItemCount - 1;
 
-    // Case 1: Moving Forward from End of Middle -> Start of Middle
     if (targetIndex > endMiddle) {
-      this.isNavigating = true;
-      // Jump to End of First Set (equivalent to End of Middle)
       const jumpIndex = this.realItemCount - 1;
-      track.scrollTo({ left: jumpIndex * itemWidth, behavior: 'instant' });
-
-      // Scroll to Start of Middle
-      setTimeout(() => {
-        track.scrollTo({ left: startMiddle * itemWidth, behavior: 'smooth' });
-        this.resetNavigationFlag();
-      }, 50); // Small delay to ensure jump renders
+      this.performWrapAroundNavigation(track, itemWidth, jumpIndex, startMiddle);
     }
-    // Case 2: Moving Backward from Start of Middle -> End of Middle
     else if (targetIndex < startMiddle) {
-      this.isNavigating = true;
-      // Jump to Start of Last Set (equivalent to Start of Middle)
       const jumpIndex = 2 * this.realItemCount;
-      track.scrollTo({ left: jumpIndex * itemWidth, behavior: 'instant' });
-
-      // Scroll to End of Middle
-      setTimeout(() => {
-        track.scrollTo({ left: endMiddle * itemWidth, behavior: 'smooth' });
-        this.resetNavigationFlag();
-      }, 50);
+      this.performWrapAroundNavigation(track, itemWidth, jumpIndex, endMiddle);
     }
-    // Case 3: Normal Navigation within bounds (or safe zones)
     else {
       track.scrollTo({ left: targetIndex * itemWidth, behavior: 'smooth' });
     }
+  }
+
+  private performWrapAroundNavigation(track: HTMLElement, itemWidth: number, jumpIndex: number, targetIndex: number) {
+    this.isNavigating = true;
+    track.scrollTo({ left: jumpIndex * itemWidth, behavior: 'instant' });
+    track.scrollTo({ left: targetIndex * itemWidth, behavior: 'smooth' });
+    this.resetNavigationFlag();
   }
 
   private resetNavigationFlag() {
@@ -154,10 +131,8 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
       this.currentIndex.set(newIndex);
     }
 
-    // Skip infinite loop logic if we are in a controlled navigation
     if (this.isNavigating) return;
 
-    // Infinite Loop Logic
     if (scrollLeft < oneSetWidth - 10) {
       track.scrollLeft += oneSetWidth;
     }
@@ -165,7 +140,6 @@ export class CarouselComponent implements AfterViewInit, OnDestroy {
       track.scrollLeft -= oneSetWidth;
     }
 
-    // Reset auto-advance timer
     this.startAutoAdvance();
   }
 

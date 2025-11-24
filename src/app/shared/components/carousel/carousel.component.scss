@@ -88,14 +88,23 @@ body {
   >article {
     display: flex;
     gap: 24px;
-    transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1); // Smoother bezier
     width: 100%;
-    transform: translateX(0);
-    padding-left: max(20px, calc((100% - 1200px) / 2 + 20px));
 
-    &.transitioning {
-      transition: transform 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+    // Scroll Snap
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    scrollbar-width: none; // Hide scrollbar Firefox
+    -ms-overflow-style: none; // Hide scrollbar IE/Edge
+
+    &::-webkit-scrollbar {
+      display: none; // Hide scrollbar Chrome/Safari
     }
+
+    // Align with container text (margin + 20px padding)
+    scroll-padding-left: max(20px, calc((100% - 1200px) / 2 + 20px));
+    padding-left: max(20px, calc((100% - 1200px) / 2 + 20px));
+    padding-right: 20px; // Ensure last item is visible
   }
 
   /* Individual slide styling */
@@ -111,6 +120,9 @@ body {
     flex-direction: column;
     align-items: flex-start; // Left align
     text-align: left;
+
+    // Snap alignment
+    scroll-snap-align: start;
 
     figure {
       width: 100%;
@@ -175,7 +187,8 @@ body {
 /* Dragging effect */
 .app-carousel article.dragging {
   cursor: grabbing;
-  transition: none;
+  /* transition: none; */
+  /* No longer needed with scroll-snap */
 }
 
 /* Media Queries for Responsiveness */

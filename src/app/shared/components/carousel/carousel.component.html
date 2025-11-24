@@ -17,8 +17,7 @@
     </nav>
   </div>
 
-  <article #carouselTrack (mousedown)="onDragStart($event)" (touchstart)="onDragStart($event)"
-    (transitionend)="onTransitionEnd()">
+  <article #carouselTrack>
     @for (item of carouselItems(); track i; let i = $index) {
     <div [class.active]="currentIndex() === i">
       <figure>

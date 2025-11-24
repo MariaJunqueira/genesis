@@ -20,4 +20,31 @@
   >app-button {
     padding-top: 48px;
   }
+
+  @media (max-width: $size-screen-md) {
+
+    >h2,
+    >p {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: $size-screen-sm) {
+
+    >h2,
+    >p {
+      width: 100%;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+
+    >p {
+      padding-bottom: 24px;
+    }
+
+    >app-button {
+      padding-top: 32px;
+      width: 100%;
+    }
+  }
 }

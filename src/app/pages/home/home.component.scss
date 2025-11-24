@@ -5,7 +5,7 @@
   flex-direction: column;
   gap: 100px;
 
-  @media (max-size: $size-screen-md) {
+  @media (max-width: $size-screen-md) {
     gap: 40px;
   }
 }

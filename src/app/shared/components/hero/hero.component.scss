@@ -69,5 +69,32 @@
   @media (max-width: $size-screen-md) {
     text-align: center;
     flex-direction: column;
+    padding-top: 40px;
+
+    >article {
+      >app-button {
+        width: 100%;
+        padding-top: $size-px-24;
+      }
+    }
+  }
+
+  @media (max-width: $size-screen-sm) {
+    padding-top: 24px;
+    gap: $size-px-20;
+
+    >article {
+      gap: 16px;
+
+      >h1 {
+        >i {
+          &::before {
+            height: 32px;
+            border-top: 16px solid #EBF8FF;
+            transform: scaleX(1) scaleY(0.7) translateY(32px) translateX(10%);
+          }
+        }
+      }
+    }
   }
 }

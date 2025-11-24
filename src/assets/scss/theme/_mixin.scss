@@ -2,6 +2,16 @@
   font-weight: $_weight;
   font-size: $_size;
   line-height: $_height;
+
+  @media (max-width: 768px) {
+    font-size: calc($_size * 0.60);
+    line-height: 1.2em;
+  }
+
+  @media (max-width: 480px) {
+    font-size: calc($_size * 0.50);
+    line-height: 1.25em;
+  }
 }
 
 @mixin position($_top, $_right, $_bottom, $_left, $_transform) {

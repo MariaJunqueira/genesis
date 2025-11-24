@@ -19,6 +19,20 @@
   }
 }
 
+@media (max-width: 768px) {
+  .app-button {
+    padding: 20px 48px;
+    font-size: $font-size-16;
+  }
+}
+
+@media (max-width: 480px) {
+  .app-button {
+    padding: 16px 32px;
+    font-size: $font-size-16;
+  }
+}
+
 :host {
   display: inline-block;
 }

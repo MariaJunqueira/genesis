@@ -2,21 +2,31 @@
   <div>
     <h2>{{ heading() | translate }}</h2>
     <nav>
-      <button (click)="previous()" aria-label="Previous slide"></button>
-      <button (click)="next()" aria-label="Next slide"></button>
+      <button (click)="previous()" aria-label="Previous slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <button (click)="next()" aria-label="Next slide">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
     </nav>
   </div>
 
-  <article class="test" (mousedown)="onDragStart($event)">
-    @for (item of items(); track item; let i = $index) {
-      <div [class.active]="currentIndex() === i">
-        <figure>
-          <img [src]="item.image" [alt]="item.title | translate" />
-        </figure>
-        <h3>{{ item.title | translate }}</h3>
-        <p>{{ item.description | translate }}</p>
-        <a [href]="item.link.url">{{ item.link.text }}</a>
-      </div>
+  <article #carouselTrack>
+    @for (item of carouselItems(); track i; let i = $index) {
+    <div [class.active]="currentIndex() === i">
+      <figure>
+        <img [src]="item.image" [alt]="item.title | translate" />
+      </figure>
+      <h3>{{ item.title | translate }}</h3>
+      <p>{{ item.description | translate }}</p>
+      <a [href]="item.link.url">{{ item.link.text }}</a>
+    </div>
     }
   </article>
 </section>

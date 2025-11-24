@@ -34,6 +34,57 @@
   }
 }
 
+@media (max-width: $size-screen-md) {
+  .app-tile {
+    >div {
+      >h3 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+
+        >p {
+          margin-left: 0;
+          padding-top: 4px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: $size-screen-sm) {
+  .app-tile {
+    padding: 24px;
+    gap: 16px;
+
+    >img {
+      border-radius: 12px;
+    }
+
+    >div {
+      >h3 {
+        padding-bottom: 8px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        font-size: $font-size-20;
+        line-height: 1.3em;
+
+        >p {
+          margin-left: 0;
+          font-size: $font-size-14;
+          color: var(--neutral-600);
+          font-weight: 500;
+        }
+      }
+
+      >p {
+        line-height: 1.6em;
+        font-size: $font-size-16;
+      }
+    }
+  }
+}
+
 :host {
   display: inline-block;
   width: 100%;

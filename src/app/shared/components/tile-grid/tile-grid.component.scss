@@ -36,7 +36,7 @@
   @media (max-width: $size-screen-md) {
     grid-template-columns: 1fr;
     gap: 24px;
-    padding: 24px;
+    padding: 24px 0;
 
     &::before {
       width: 90%;
@@ -44,7 +44,7 @@
   }
 
   @media (max-width: $size-screen-sm) {
-    padding: 16px;
+    padding: 16px 0;
     gap: 16px;
 
     &::before {

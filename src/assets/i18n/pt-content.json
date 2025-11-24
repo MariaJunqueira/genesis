@@ -1,5 +1,16 @@
 {
   "header::nav::home": "Início",
   "header::nav::about": "Sobre",
-  "header::nav::portfolio": "Portifólio"
+  "header::nav::portfolio": "Portifólio",
+  "home::testimonials::title": "O que meus clientes dizem sobre meu trabalho",
+  "home::testimonials::subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non. Viverra nec eu.",
+  "home::testimonials::testimonial1::quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non. Viverra nec eu, in ridicusLorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "home::testimonials::testimonial1::name": "Sophia Moore",
+  "home::testimonials::testimonial1::title": "VP de Design na Agência",
+  "home::testimonials::testimonial2::quote": "Trabalhar com Maria foi um prazer absoluto. Sua atenção aos detalhes e visão criativa elevaram nosso projeto além do que imaginávamos ser possível.",
+  "home::testimonials::testimonial2::name": "James Rodriguez",
+  "home::testimonials::testimonial2::title": "CEO na TechStart Inc",
+  "home::testimonials::testimonial3::quote": "A expertise em design de Maria transformou completamente nossa experiência do usuário. Os resultados falam por si - nosso engajamento aumentou 300%.",
+  "home::testimonials::testimonial3::name": "Emily Chen",
+  "home::testimonials::testimonial3::title": "Gerente de Produto na InnovateCo"
 }

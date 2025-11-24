@@ -31,5 +31,16 @@
   "home::portfolio::projects::todoListRedesign::cta": "Read case study",
   "home::portfolio::projects::analyticsDashboardDesign::title": "Analytics Dashboard Design",
   "home::portfolio::projects::analyticsDashboardDesign::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non dolor sit consectetur do.",
-  "home::portfolio::projects::analyticsDashboardDesign::cta": "Read case study"
+  "home::portfolio::projects::analyticsDashboardDesign::cta": "Read case study",
+  "home::testimonials::title": "What my clients say about my work",
+  "home::testimonials::subtitle": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non. Viverra nec eu.",
+  "home::testimonials::testimonial1::quote": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non. Viverra nec eu, in ridicusLorem ipsum dolor sit amet, consectetur adipiscing elit.",
+  "home::testimonials::testimonial1::name": "Sophia Moore",
+  "home::testimonials::testimonial1::title": "VP of Design at Agency",
+  "home::testimonials::testimonial2::quote": "Working with Maria was an absolute pleasure. Her attention to detail and creative vision elevated our entire project beyond what we imagined possible.",
+  "home::testimonials::testimonial2::name": "James Rodriguez",
+  "home::testimonials::testimonial2::title": "CEO at TechStart Inc",
+  "home::testimonials::testimonial3::quote": "Maria's design expertise transformed our user experience completely. The results speak for themselves - our user engagement increased by 300%.",
+  "home::testimonials::testimonial3::name": "Emily Chen",
+  "home::testimonials::testimonial3::title": "Product Manager at InnovateCo"
 }

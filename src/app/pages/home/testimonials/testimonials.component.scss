@@ -2,28 +2,24 @@
 @use '../../../../assets/scss/sizes' as *;
 
 .app-testimonials {
-    padding: $size-px-80 $size-px-40;
+    padding: $size-px-80 $size-px-20;
     position: relative;
 
     @media (max-width: $size-screen-md) {
-        padding: $size-px-40 $size-px-24;
+        padding: $size-px-24 0;
     }
 
     &::before {
         content: '';
         background-color: #f6f7ff;
         position: absolute;
-        width: 70%;
+        width: 90%;
         height: 100%;
         z-index: -1;
         top: 0;
         left: 50%;
         transform: translateX(-50%);
         border-radius: $size-px-20;
-
-        @media (max-width: $size-screen-md) {
-            width: 90%;
-        }
     }
 
     >header {
@@ -31,7 +27,9 @@
         margin-bottom: $size-px-60;
 
         @media (max-width: $size-screen-md) {
-            margin-bottom: 32px;
+            width: 90%;
+            margin: auto;
+            padding: 16px;
         }
 
         >h2 {
@@ -98,13 +96,40 @@
                 transform: scale(0.95);
             }
 
-            @media (max-width: $size-screen-md) {
-                width: $size-px-40;
-                height: $size-px-40;
+            @media (max-width: $size-screen-lg) {
+                position: absolute;
+                z-index: 1;
+                left: -0;
+                top: 50%;
+                transform: translate(-50%, -100%);
+                width: $size-px-50;
+                height: $size-px-50;
 
                 >svg {
                     width: 18px;
                     height: 18px;
+                }
+
+                &:hover {
+                    transform: translate(-50%, -100%) scale(1.05);
+                }
+
+                &:active {
+                    transform: translate(-50%, -100%) scale(0.95);
+                }
+
+                &:nth-of-type(2) {
+                    right: 0;
+                    left: unset;
+                    transform: translate(50%, -100%);
+
+                    &:hover {
+                        transform: translate(50%, -100%) scale(1.05);
+                    }
+
+                    &:active {
+                        transform: translate(50%, -100%) scale(0.95);
+                    }
                 }
             }
         }
@@ -122,7 +147,6 @@
 
             // Add padding to prevent shadow clipping
             padding: 20px 0 40px 0;
-            margin: -20px 0 -40px 0;
 
             &::-webkit-scrollbar {
                 display: none;
@@ -140,9 +164,9 @@
                 border-radius: $size-px-20;
 
                 @media (max-width: $size-screen-md) {
-                    flex-direction: column;
-                    gap: $size-px-24;
-                    padding: $size-px-20 $size-px-10;
+                    flex-direction: column-reverse;
+                    gap: 24px;
+                    padding: 24px 16px;
                 }
 
                 >blockquote {
@@ -210,8 +234,8 @@
                     }
 
                     @media (max-width: $size-screen-md) {
-                        width: $size-px-120;
-                        height: $size-px-120;
+                        width: 180px;
+                        height: 180px;
                     }
                 }
             }

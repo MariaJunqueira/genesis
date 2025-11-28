@@ -19,18 +19,11 @@
   >div {
     >h3 {
       padding-bottom: 12px;
-      display: flex;
 
       >p {
         margin-left: auto;
       }
     }
-  }
-}
-
-@media (max-width: $size-screen-lg) {
-  .app-tile {
-    flex-direction: column;
   }
 }
 
@@ -41,6 +34,7 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 6px;
+        font-size: $font-size-20;
 
         >p {
           margin-left: 0;
@@ -66,7 +60,6 @@
         flex-direction: column;
         align-items: flex-start;
         gap: 8px;
-        font-size: $font-size-20;
         line-height: 1.3em;
 
         >p {

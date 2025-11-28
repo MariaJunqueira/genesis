@@ -60,9 +60,22 @@
 
   >figure {
     flex: 1;
+    display: flex;
+    justify-content: center;
 
-    >img {
-      width: 100%;
+    >div {
+      // Wrapper to control size and shape
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #e8e3ff 0%, #d4f0ff 100%);
+
+      >img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 

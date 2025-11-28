@@ -6,36 +6,36 @@ import { TileGridComponent } from '../../../shared/components/tile-grid/tile-gri
 import { Tile } from '../../../shared/components/tile/tile.model';
 
 @Component({
-    selector: 'app-resume',
-    imports: [ButtonComponent, TileGridComponent, TranslateModule],
-    templateUrl: './resume.component.html',
-    styleUrl: './resume.component.scss'
+  selector: 'app-resume',
+  imports: [ButtonComponent, TileGridComponent, TranslateModule],
+  templateUrl: './resume.component.html',
+  styleUrl: './resume.component.scss'
 })
 export class ResumeComponent {
   tiles: Array<Tile> = [
     {
-      heading: 'home::services::webDesign::heading',
-      title: 'home::services::webDesign::title',
-      subtitle: 'home::services::webDesign::subtitle',
-      description: 'home::services::webDesign::description',
+      heading: 'home::resume::parkbee::company',
+      title: 'home::resume::parkbee::title',
+      subtitle: 'home::resume::parkbee::subtitle',
+      description: 'home::resume::parkbee::description',
     },
     {
-      heading: 'home::services::uiuxDesign::heading',
-      title: 'home::services::uiuxDesign::title',
-      subtitle: 'home::services::uiuxDesign::subtitle',
-      description: 'home::services::uiuxDesign::description',
+      heading: 'home::resume::25friday::company',
+      title: 'home::resume::25friday::title',
+      subtitle: 'home::resume::25friday::subtitle',
+      description: 'home::resume::25friday::description',
     },
     {
-      heading: 'home::services::productDesign::heading',
-      title: 'home::services::productDesign::title',
-      subtitle: 'home::services::productDesign::subtitle',
-      description: 'home::services::productDesign::description',
+      heading: 'home::resume::natixis::company',
+      title: 'home::resume::natixis::title',
+      subtitle: 'home::resume::natixis::subtitle',
+      description: 'home::resume::natixis::description',
     },
     {
-      heading: 'home::services::webDevelopment::heading',
-      title: 'home::services::webDevelopment::title',
-      subtitle: 'home::services::webDevelopment::subtitle',
-      description: 'home::services::webDevelopment::description',
-    }
+      heading: 'home::resume::pravaler::company',
+      title: 'home::resume::pravaler::title',
+      subtitle: 'home::resume::pravaler::subtitle',
+      description: 'home::resume::pravaler::description',
+    },
   ];
 }

@@ -1,0 +1,29 @@
+@use '../../../../assets/scss/variables' as *;
+@use '../../../../assets/scss/sizes' as *;
+
+.app-footer {
+    background-color: #ffffff;
+    padding: $size-px-40 0;
+    border-top: 1px solid var(--neutral-300);
+    margin-top: $size-px-80;
+
+    &__content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 $size-px-20;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: $size-screen-md) {
+            flex-direction: column;
+            gap: 16px;
+            text-align: center;
+        }
+    }
+
+    p {
+        font-size: $font-size-14;
+        color: var(--neutral-600);
+    }
+}

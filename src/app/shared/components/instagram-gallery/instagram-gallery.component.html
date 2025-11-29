@@ -1,0 +1,10 @@
+<div class="instagram-grid">
+    @for (image of images; track $index) {
+    <a href="https://instagram.com" target="_blank" class="instagram-item" [class]="image.class">
+        <img [src]="image.src" alt="Instagram post" loading="lazy">
+        <div class="overlay">
+            <span class="icon">📷</span>
+        </div>
+    </a>
+    }
+</div>

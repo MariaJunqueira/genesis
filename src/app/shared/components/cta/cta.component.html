@@ -1,0 +1,11 @@
+<section class="app-cta">
+    <h2>{{ heading() }}</h2>
+    @if (description()) {
+    <p>{{ description() }}</p>
+    }
+    @if (buttonLink()) {
+    <app-button [routerLink]="buttonLink()">{{ buttonText() }}</app-button>
+    } @else {
+    <app-button>{{ buttonText() }}</app-button>
+    }
+</section>

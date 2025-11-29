@@ -80,7 +80,7 @@
         display: flex;
         gap: 48px;
         align-items: flex-start;
-        padding: 80px 0 120px;
+        padding: 80px 0;
 
         >article {
             flex: 1;
@@ -139,6 +139,143 @@
         }
     }
 
+    // Fourth section - Resume
+    >div:nth-child(4) {
+        padding: 80px 0;
+
+        >article {
+            >h2 {
+                padding-bottom: 48px;
+                text-align: center;
+            }
+        }
+    }
+
+    // Fifth section - Skills
+    >div:nth-child(5) {
+        padding: 120px 0;
+
+        >article {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+
+            >div:nth-child(1) {
+                text-align: center;
+                margin-bottom: 64px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                >h2 {
+                    padding-bottom: 16px;
+                    position: relative;
+                    display: inline-block;
+
+                    // "Curved line" effect
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        transform: translateX(-50%);
+                        width: 80px;
+                        height: 4px;
+                        background-color: #d4f0ff; // Very light blue
+                        border-radius: 4px; // Rounded ends
+                    }
+                }
+
+                >p {
+                    margin-top: 16px;
+                    line-height: 1.6;
+                    color: var(--neutral-600);
+                    max-width: 500px;
+                }
+            }
+
+            >div:nth-child(2) {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                width: 100%;
+
+                >div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    padding: 48px 24px;
+                    position: relative;
+
+                    &:not(:last-child)::after {
+                        content: '';
+                        position: absolute;
+                        right: 0;
+                        top: 24px;
+                        bottom: 24px;
+                        width: 1px;
+                        background-color: rgba(0, 0, 0, 0.1);
+                    }
+
+                    // Icon wrapper (was .icon-wrapper)
+                    >div:nth-child(1) {
+                        width: 64px;
+                        height: 64px;
+                        margin-bottom: 24px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: contain;
+                        }
+                    }
+
+                    >h4 {
+                        font-size: 1.25rem;
+                        font-weight: 600;
+                        margin-bottom: 24px;
+                        color: var(--color-text-primary);
+                    }
+
+                    >ul {
+                        list-style: none;
+                        padding: 0;
+                        margin: 0;
+                        text-align: center;
+
+                        >li {
+                            padding-bottom: 12px;
+                            color: var(--neutral-600);
+                            font-size: 1rem;
+
+                            &:last-child {
+                                padding-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Sixth section - Gallery
+    >div:nth-child(6) {
+        padding: 80px 0;
+
+        >article {
+            display: flex;
+            flex-direction: column;
+            gap: 32px;
+
+            >h2 {
+                text-align: left;
+            }
+        }
+    }
+
     // Tablet Responsive
     @media (max-width: $size-screen-md) {
         >div:nth-child(1) {
@@ -166,12 +303,18 @@
         >div:nth-child(3) {
             flex-direction: column;
             gap: 32px;
-            padding: 48px 0 80px;
+            padding: 48px 0;
 
             >figure {
                 width: 100%;
                 height: 400px;
             }
+        }
+
+        >div:nth-child(4),
+        >div:nth-child(5),
+        >div:nth-child(6) {
+            padding: 48px 0;
         }
     }
 
@@ -233,6 +376,35 @@
 
                         &::before {
                             left: 8px;
+                        }
+                    }
+                }
+            }
+        }
+
+        >div:nth-child(4),
+        >div:nth-child(5),
+        >div:nth-child(6) {
+            padding: 32px 0;
+        }
+
+        >div:nth-child(5) {
+            >article {
+
+                >div:nth-child(2) {
+                    grid-template-columns: 1fr;
+                    border-top: none;
+
+                    >div {
+                        padding: 32px 0;
+                        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+                        &:last-child {
+                            border-bottom: none;
+                        }
+
+                        &:not(:last-child)::after {
+                            display: none; // Remove vertical border
                         }
                     }
                 }

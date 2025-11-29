@@ -51,7 +51,6 @@
     "home::testimonials::testimonial2::name": "James Rodriguez",
     "home::testimonials::testimonial2::title": "CEO bij TechStart Inc",
     "home::testimonials::testimonial3::quote": "Maria's design expertise transformeerde onze gebruikerservaring volledig. De resultaten spreken voor zich - onze gebruikersbetrokkenheid steeg met 300%.",
-    "home::testimonials::testimonial3::name": "Emily Chen",
     "home::testimonials::testimonial3::title": "Product Manager bij InnovateCo",
     "about::hero::heading": "Ik ben Maria Junqueira, een Product en Web Designer",
     "about::hero::introduction": "Met meer dan 6 jaar ervaring in frontend development, specialiseer ik me in het creëren van responsive, gebruikersgerichte webapplicaties. Ik ben gepassioneerd over schone code, uitzonderlijke gebruikerservaringen en het leiden van teams om schaalbare oplossingen te bouwen.",
@@ -62,5 +61,13 @@
     "about::timeline::item1": "Begon met HTML en CSS, websites bouwen voor lokale bedrijven en de grondbeginselen van webdesign leren.",
     "about::timeline::item2": "Ontwikkelde expertise in moderne frameworks zoals Angular en Vue, met een focus op prestaties en toegankelijkheid.",
     "about::timeline::item3": "Leidde teams bij het implementeren van CI/CD pipelines, verbetering van codekwaliteit met 60%, en het leveren van uitzonderlijke gebruikerservaringen in meerdere projecten.",
+    "about::resume::heading": "Bekijk mijn cv",
+    "about::resume::cta": "Neem contact op",
+    "about::skills::heading": "Mijn vaardigheden & software",
+    "about::skills::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non. Viverra nec eu.",
+    "about::cta::heading": "Wilt u deze sjabloon aanpassen?",
+    "about::cta::description": "Huur ons Webflow-team in!",
+    "about::cta::button": "Neem contact op",
+    "about::social::heading": "Volg mij op sociale media",
     "footer::all_rights_reserved": "Alle rechten voorbehouden."
 }

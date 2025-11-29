@@ -62,5 +62,13 @@
   "about::timeline::item1": "Started with HTML and CSS, building websites for local businesses and learning the fundamentals of web design.",
   "about::timeline::item2": "Developed expertise in modern frameworks like Angular and Vue, while maintaining a focus on performance and accessibility.",
   "about::timeline::item3": "Led teams to implement CI/CD pipelines, improve code quality by 60%, and deliver exceptional user experiences across multiple projects.",
+  "about::resume::heading": "Take a look at my resume",
+  "about::resume::cta": "Get in touch",
+  "about::skills::heading": "My skills & software",
+  "about::skills::description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lectus mattis nunc aliquam tincidunt est non. Viverra nec eu.",
+  "about::cta::heading": "Need to customize this template?",
+  "about::cta::description": "Hire our Webflow team!",
+  "about::cta::button": "Get in touch",
+  "about::social::heading": "Follow me on social media",
   "footer::all_rights_reserved": "All rights reserved."
 }

@@ -1,0 +1,32 @@
+.app-cta {
+    text-align: center;
+    padding: 80px 0;
+
+    >h2 {
+        padding-bottom: 24px;
+    }
+
+    >p {
+        padding-bottom: 48px;
+        line-height: 1.8;
+        color: var(--color-text-secondary);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+        padding: 48px 0;
+
+        >h2 {
+            padding-bottom: 16px;
+        }
+
+        >p {
+            padding-bottom: 32px;
+        }
+    }
+}
+
+:host {
+    display: block;
+}

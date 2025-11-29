@@ -53,5 +53,14 @@
   "home::testimonials::testimonial3::quote": "A expertise em design de Maria transformou completamente nossa experiência do usuário. Os resultados falam por si - nosso engajamento aumentou 300%.",
   "home::testimonials::testimonial3::name": "Emily Chen",
   "home::testimonials::testimonial3::title": "Gerente de Produto na InnovateCo",
+  "about::hero::heading": "Sou Maria Junqueira, uma Designer de Produtos e Web",
+  "about::hero::introduction": "Com mais de 6 anos de experiência em desenvolvimento frontend, especializo-me em criar aplicações web responsivas e centradas no usuário. Sou apaixonada por código limpo, experiências de usuário excepcionais e liderar equipes para construir soluções escaláveis.",
+  "about::story::heading": "Minha história",
+  "about::story::description": "Descobri minha paixão pelo desenvolvimento web no início da minha carreira, e tem sido uma jornada incrível desde então. Desde a construção de sites simples até a arquitetura de soluções complexas baseadas em nuvem, evoluí continuamente minhas habilidades. Na ParkBee, lidero iniciativas frontend, oriento desenvolvedores e implemento melhores práticas que melhoraram significativamente nosso fluxo de desenvolvimento. Minha abordagem combina excelência técnica com uma compreensão profunda das necessidades do usuário, garantindo que cada projeto entregue desempenho e satisfação.",
+  "about::timeline::heading": "Desenvolvendo desde os 16 anos",
+  "about::timeline::description": "Minha jornada na criação de experiências digitais começou jovem. Aqui estão alguns destaques:",
+  "about::timeline::item1": "Comecei com HTML e CSS, construindo sites para empresas locais e aprendendo os fundamentos do design web.",
+  "about::timeline::item2": "Desenvolvi expertise em frameworks modernos como Angular e Vue, mantendo o foco em desempenho e acessibilidade.",
+  "about::timeline::item3": "Liderei equipes para implementar pipelines CI/CD, melhorar a qualidade do código em 60% e entregar experiências de usuário excepcionais em vários projetos.",
   "footer::all_rights_reserved": "Todos os direitos reservados."
 }

@@ -53,5 +53,14 @@
   "home::testimonials::testimonial3::quote": "Maria's design expertise transformed our user experience completely. The results speak for themselves - our user engagement increased by 300%.",
   "home::testimonials::testimonial3::name": "Emily Chen",
   "home::testimonials::testimonial3::title": "Product Manager at InnovateCo",
+  "about::hero::heading": "I'm Maria Junqueira, a Product and Web Designer",
+  "about::hero::introduction": "With over 6 years of experience in frontend development, I specialize in creating responsive, user-centric web applications. I'm passionate about clean code, exceptional user experiences, and leading teams to build scalable solutions.",
+  "about::story::heading": "My story",
+  "about::story::description": "I discovered my passion for web development early in my career, and it has been an incredible journey ever since. Starting from building simple websites to architecting complex cloud-based solutions, I've continuously evolved my skills. At ParkBee, I lead frontend initiatives, mentor developers, and implement best practices that have significantly improved our development workflow. My approach combines technical excellence with a deep understanding of user needs, ensuring every project delivers both performance and delight.",
+  "about::timeline::heading": "Designing since I was 16 years old",
+  "about::timeline::description": "My journey in creating digital experiences began at a young age. Here are some highlights:",
+  "about::timeline::item1": "Started with HTML and CSS, building websites for local businesses and learning the fundamentals of web design.",
+  "about::timeline::item2": "Developed expertise in modern frameworks like Angular and Vue, while maintaining a focus on performance and accessibility.",
+  "about::timeline::item3": "Led teams to implement CI/CD pipelines, improve code quality by 60%, and deliver exceptional user experiences across multiple projects.",
   "footer::all_rights_reserved": "All rights reserved."
 }

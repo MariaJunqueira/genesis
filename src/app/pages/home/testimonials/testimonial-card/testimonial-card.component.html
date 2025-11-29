@@ -1,0 +1,10 @@
+<blockquote>
+  <p>"{{ testimonial.quote | translate }}"</p>
+  <footer>
+    <h3>{{ testimonial.name | translate }}</h3>
+    <p>{{ testimonial.title | translate }}</p>
+  </footer>
+</blockquote>
+<figure>
+  <img [src]="testimonial.image" [alt]="testimonial.name | translate" />
+</figure>

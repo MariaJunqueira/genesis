@@ -1,48 +1,37 @@
 <section class="app-testimonials">
-    <header>
-        <h2>{{ 'home::testimonials::title' | translate }}</h2>
-        <p>{{ 'home::testimonials::subtitle' | translate }}</p>
-    </header>
+  <header>
+    <h2>{{ 'home::testimonials::title' | translate }}</h2>
+    <p>{{ 'home::testimonials::subtitle' | translate }}</p>
+  </header>
 
-    <div>
-        <button (click)="previous()" aria-label="Previous testimonial">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-        </button>
+  <div>
+    <button (click)="previous()" aria-label="Previous testimonial">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
 
-        <article #carouselTrack>
-            @for (testimonial of carouselItems(); track $index) {
-            <div>
-                <blockquote>
-                    <p>"{{ testimonial.quote | translate }}"</p>
-                    <footer>
-                        <h3>{{ testimonial.name | translate }}</h3>
-                        <p>{{ testimonial.title | translate }}</p>
-                    </footer>
-                </blockquote>
-                <figure>
-                    <img [src]="testimonial.image" [alt]="testimonial.name | translate" />
-                </figure>
-            </div>
-            }
-        </article>
+    <article #carouselTrack>
+      @for (testimonial of carouselItems(); track $index) {
+      <app-testimonial-card [testimonial]="testimonial"></app-testimonial-card>
+      }
+    </article>
 
-        <button (click)="next()" aria-label="Next testimonial">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                    stroke-linejoin="round" />
-            </svg>
-        </button>
-    </div>
+    <button (click)="next()" aria-label="Next testimonial">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+          stroke-linejoin="round" />
+      </svg>
+    </button>
+  </div>
 
-    <nav>
-        @for (testimonial of testimonials; track $index) {
-        <button [class.active]="(currentIndex() % realItemCount) === $index"
-            [attr.aria-label]="'Go to testimonial ' + ($index + 1)"
-            (click)="navigateTo(currentIndex() - (currentIndex() % realItemCount) + $index)">
-        </button>
-        }
-    </nav>
+  <nav>
+    @for (testimonial of testimonials; track $index) {
+    <button [class.active]="(currentIndex() % realItemCount) === $index"
+      [attr.aria-label]="'Go to testimonial ' + ($index + 1)"
+      (click)="navigateTo(currentIndex() - (currentIndex() % realItemCount) + $index)">
+    </button>
+    }
+  </nav>
 </section>

@@ -1,12 +1,15 @@
-import { Component, effect, signal, ViewChild, ElementRef, AfterViewInit, OnDestroy, Inject, PLATFORM_ID } from '@angular/core';
 import { isPlatformBrowser } from '@angular/common';
+import {
+    AfterViewInit, Component, effect, ElementRef, Inject, OnDestroy, PLATFORM_ID, signal, ViewChild
+} from '@angular/core';
 import { TranslateModule } from '@ngx-translate/core';
 
+import { TestimonialCardComponent } from './testimonial-card/testimonial-card.component';
 import { Testimonial } from './testimonial.model';
 
 @Component({
     selector: 'app-testimonials',
-    imports: [TranslateModule],
+    imports: [TranslateModule, TestimonialCardComponent],
     templateUrl: './testimonials.component.html',
     styleUrl: './testimonials.component.scss'
 })

@@ -1,84 +1,60 @@
 <div class="grid-container">
-    <div class="row">
-        <div class="col-xs-12">
-            <section class="app-about">
-                <div>
-                    <figure>
-                        <img width="610" height="400" src="assets/images/about-working.jpg" alt="Maria Junqueira"
-                            loading="eager">
-                    </figure>
-                    <article>
-                        <h1>{{ 'about::hero::heading' | translate }}</h1>
-                        <p>{{ 'about::hero::introduction' | translate }}</p>
-                    </article>
-                </div>
-
-                <div>
-                    <article>
-                        <h2>{{ 'about::story::heading' | translate }}</h2>
-                        <p>{{ 'about::story::description' | translate }}</p>
-                    </article>
-                    <figure>
-                        <img width="300" height="300" src="assets/images/about-story.jpg" alt="Coding on laptop"
-                            loading="lazy">
-                    </figure>
-                </div>
-
-                <div>
-                    <article>
-                        <h3>{{ 'about::timeline::heading' | translate }}</h3>
-                        <p>{{ 'about::timeline::description' | translate }}</p>
-                        <ul>
-                            <li>{{ 'about::timeline::item1' | translate }}</li>
-                            <li>{{ 'about::timeline::item2' | translate }}</li>
-                            <li>{{ 'about::timeline::item3' | translate }}</li>
-                        </ul>
-                    </article>
-                    <figure>
-                        <img width="610" height="600" src="assets/images/about-couch.jpg" alt="Creative workspace"
-                            loading="lazy">
-                    </figure>
-                </div>
-
-                <div>
-                    <article>
-                        <h2>{{ 'about::resume::heading' | translate }}</h2>
-                        <app-tile-grid [tiles]="resumeTiles"></app-tile-grid>
-                    </article>
-                </div>
-
-                <div>
-                    <article>
-                        <div>
-                            <h2>{{ 'about::skills::heading' | translate }}</h2>
-                            <p>{{ 'about::skills::description' | translate }}</p>
-                        </div>
-
-                        <div>
-                            @for (category of skillCategories; track category.name) {
-                            <div>
-                                <div>
-                                    <img [src]="category.icon" [alt]="category.name" loading="lazy">
-                                </div>
-                                <h4>{{ category.name }}</h4>
-                                <ul>
-                                    @for (item of category.items; track item) {
-                                    <li>{{ item }}</li>
-                                    }
-                                </ul>
-                            </div>
-                            }
-                        </div>
-                    </article>
-                </div>
-
-                <div>
-                    <article>
-                        <h2>{{ 'about::social::heading' | translate }}</h2>
-                        <app-instagram-gallery></app-instagram-gallery>
-                    </article>
-                </div>
-            </section>
+  <div class="row">
+    <div class="col-xs-12">
+      <section class="app-about">
+        <div>
+          <figure>
+            <img width="610" height="400" src="assets/images/about-working.jpg" alt="Maria Junqueira" loading="eager">
+          </figure>
+          <article>
+            <h1>{{ 'about::hero::heading' | translate }}</h1>
+            <p>{{ 'about::hero::introduction' | translate }}</p>
+          </article>
         </div>
+
+        <div>
+          <article>
+            <h2>{{ 'about::story::heading' | translate }}</h2>
+            <p>{{ 'about::story::description' | translate }}</p>
+          </article>
+          <figure>
+            <img width="300" height="300" src="assets/images/about-story.jpg" alt="Coding on laptop" loading="lazy">
+          </figure>
+        </div>
+
+        <div>
+          <article>
+            <h3>{{ 'about::timeline::heading' | translate }}</h3>
+            <p>{{ 'about::timeline::description' | translate }}</p>
+            <ul>
+              <li>{{ 'about::timeline::item1' | translate }}</li>
+              <li>{{ 'about::timeline::item2' | translate }}</li>
+              <li>{{ 'about::timeline::item3' | translate }}</li>
+            </ul>
+          </article>
+          <figure>
+            <img width="610" height="600" src="assets/images/about-couch.jpg" alt="Creative workspace" loading="lazy">
+          </figure>
+        </div>
+
+        <div>
+          <article>
+            <h2>{{ 'about::resume::heading' | translate }}</h2>
+            <app-tile-grid [tiles]="resumeTiles"></app-tile-grid>
+          </article>
+        </div>
+
+        <div>
+          <app-about-skills [skillCategories]="skillCategories"></app-about-skills>
+        </div>
+
+        <div>
+          <article>
+            <h2>{{ 'about::social::heading' | translate }}</h2>
+            <app-instagram-gallery></app-instagram-gallery>
+          </article>
+        </div>
+      </section>
     </div>
+  </div>
 </div>

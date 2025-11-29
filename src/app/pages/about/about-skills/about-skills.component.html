@@ -1,0 +1,22 @@
+<article>
+  <div>
+    <h2>{{ 'about::skills::heading' | translate }}</h2>
+    <p>{{ 'about::skills::description' | translate }}</p>
+  </div>
+
+  <div>
+    @for (category of skillCategories; track category.name) {
+    <div>
+      <div>
+        <img [src]="category.icon" [alt]="category.name" loading="lazy">
+      </div>
+      <h4>{{ category.name }}</h4>
+      <ul>
+        @for (item of category.items; track item) {
+        <li>{{ item }}</li>
+        }
+      </ul>
+    </div>
+    }
+  </div>
+</article>
